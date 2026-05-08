@@ -26,30 +26,13 @@ body{
 
   font-family:Arial, sans-serif;
 
+  background:#fffafc;
+
   overflow-x:hidden;
 
-  color:#fff;
-
-  background:
-
-  linear-gradient(
-
-    rgba(0,0,0,0.65),
-
-    rgba(0,0,0,0.75)
-
-  ),
-
-  url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1974&auto=format&fit=crop');
-
-  background-size:cover;
-
-  background-position:center;
-
-  background-attachment:fixed;
+  color:#222;
 
 }
-
 /* 메인 화면 */
 
 .hero{
@@ -84,14 +67,17 @@ body{
 
   display:flex;
 
-  width:fit-content;
+  width:max-content;
 
-  animation:slide 40s linear infinite;
+  will-change:transform;
+
+  animation:slide 22s linear infinite;
 
 }
+
 .reverse{
 
-  animation:slideReverse 28s linear infinite;
+  animation:slideReverse 22s linear infinite;
 
 }
 
@@ -451,15 +437,15 @@ body{
 
 @keyframes slide{
 
-  0%{
+  from{
 
-    transform:translateX(0);
+    transform:translate3d(0,0,0);
 
   }
 
-  100%{
+  to{
 
-    transform:translateX(-50%);
+    transform:translate3d(calc(-124px * 8),0,0);
 
   }
 
@@ -467,15 +453,15 @@ body{
 
 @keyframes slideReverse{
 
-  0%{
+  from{
 
-    transform:translateX(-50%);
+    transform:translate3d(calc(-124px * 8),0,0);
 
   }
 
-  100%{
+  to{
 
-    transform:translateX(0);
+    transform:translate3d(0,0,0);
 
   }
 
