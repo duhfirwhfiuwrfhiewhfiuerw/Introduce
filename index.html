@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Favorite Person</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+
+    *{
+
+      margin:0;
+
+      padding:0;
+
+      box-sizing:border-box;
+
+    }
+
+    body{
+
+      background:#fffafc;
+
+      overflow:hidden;
+
+      font-family:Arial, sans-serif;
+
+      height:100vh;
+
+    }
+
+    .container{
+
+      width:100%;
+
+      height:100vh;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      position:relative;
+
+    }
+
+    /* 가운데 메인 */
+
+    .center-text{
+
+      position:absolute;
+
+      top:50%;
+
+      left:50%;
+
+      transform:translate(-50%,-50%);
+
+      text-align:center;
+
+      z-index:10;
+
+    }
+
+    .center-text h1{
+
+      font-size:42px;
+
+      color:#222;
+
+      margin-bottom:15px;
+
+      letter-spacing:2px;
+
+    }
+
+    .center-text p{
+
+      color:#777;
+
+      font-size:15px;
+
+      letter-spacing:3px;
+
+    }
+
+    /* 필름 공통 */
+
+    .film-wrapper{
+
+      width:100%;
+
+      overflow:hidden;
+
+      padding:20px 0;
+
+      background:#fffafc;
+
+    }
+
+    .film-track{
+
+      display:flex;
+
+      width:max-content;
+
+      animation:slide 28s linear infinite;
+
+    }
+
+    .film-track.reverse{
+
+      animation:slideReverse 28s linear infinite;
+
+    }
+
+    /* 필름 카드 */
+
+    .film{
+
+      background:#111;
+
+      padding:12px;
+
+      margin-right:20px;
+
+      border-radius:8px;
+
+      position:relative;
+
+    }
+
+    /* 필름 구멍 */
+
+    .film::before,
+
+    .film::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+
+      width:100%;
+
+      height:8px;
+
+      background:
+
+      repeating-linear-gradient(
+
+        to right,
+
+        #fff 0px,
+
+        #fff 10px,
+
+        transparent 10px,
+
+        transparent 20px
+
+      );
+
+    }
+
+    .film::before{
+
+      top:4px;
+
+    }
+
+    .film::after{
+
+      bottom:4px;
+
+    }
+
+    .film img{
+
+      width:180px;
+
+      height:240px;
+
+      object-fit:cover;
+
+      border-radius:4px;
+
+      display:block;
+
+      margin-top:12px;
+
+      margin-bottom:12px;
+
+    }
+
+    /* 애니메이션 */
+
+    @keyframes slide{
+
+      from{
+
+        transform:translateX(0);
+
+      }
+
+      to{
+
+        transform:translateX(-50%);
+
+      }
+
+    }
+
+    @keyframes slideReverse{
+
+      from{
+
+        transform:translateX(-50%);
+
+      }
+
+      to{
+
+        transform:translateX(0);
+
+      }
+
+    }
+
+    /* 모바일 */
+
+    @media(max-width:768px){
+
+      .center-text h1{
+
+        font-size:28px;
+
+      }
+
+      .center-text p{
+
+        font-size:12px;
+
+      }
+
+      .film img{
+
+        width:130px;
+
+        height:180px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- 상단 필름 -->
+
+    <div class="film-wrapper">
+
+      <div class="film-track">
+
+        <!-- 사진 반복 -->
+
+        <div class="film">
+
+          <img src="photo1.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo2.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo3.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo4.jpg">
+
+        </div>
+
+        <!-- 무한반복용 복제 -->
+
+        <div class="film">
+
+          <img src="photo1.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo2.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo3.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo4.jpg">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 가운데 -->
+
+    <div class="center-text">
+
+      <h1>My Favorite Person</h1>
+
+      <p>all my favorite moments with you</p>
+
+    </div>
+
+    <!-- 하단 필름 -->
+
+    <div class="film-wrapper">
+
+      <div class="film-track reverse">
+
+        <div class="film">
+
+          <img src="photo5.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo6.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo7.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo8.jpg">
+
+        </div>
+
+        <!-- 반복 -->
+
+        <div class="film">
+
+          <img src="photo5.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo6.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo7.jpg">
+
+        </div>
+
+        <div class="film">
+
+          <img src="photo8.jpg">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
