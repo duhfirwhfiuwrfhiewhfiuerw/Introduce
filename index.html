@@ -351,6 +351,89 @@ body{
 
 }
 
+.profile-box{
+
+  display:flex;
+
+  gap:18px;
+
+  align-items:flex-start;
+
+}
+
+.profile-box img{
+
+  width:110px;
+
+  height:110px;
+
+  object-fit:cover;
+
+  border-radius:16px;
+
+}
+
+.profile-info{
+
+  flex:1;
+
+}
+
+.profile-info h2{
+
+  margin-bottom:12px;
+
+  font-size:22px;
+
+}
+
+.profile-info p{
+
+  margin-bottom:8px;
+
+  line-height:1.5;
+
+}
+
+.detail-box{
+
+  margin-top:18px;
+
+  background:#fffafc;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  line-height:1.6;
+
+}
+
+.like-list,
+
+.hate-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+}
+
+.like-item,
+
+.hate-item{
+
+  background:#fffafc;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  line-height:1.5;
+
+}
 /* 버킷리스트 */
 
 .bucket-input{
@@ -580,7 +663,39 @@ body{
 
       <h3>Introduction</h3>
 
-      <textarea placeholder="Write about him..."></textarea>
+  <div class="profile-box">
+
+  <img src="https://i.imgur.com/5sfYlRO.jpeg">
+
+  <div class="profile-info">
+
+    <h2>Name</h2>
+
+    <p><strong>Age :</strong> 32짤</p>
+
+    <p><strong>Location :</strong> 서울 송파구 어딘가</p>
+
+    <p><strong>Height :</strong> 176cm</p>
+
+    <p><strong>Weight :</strong> 68~72kg</p>
+
+    <p><strong>Shoe Size :</strong> 270mm</p>
+
+    <p><strong>Clothes Size :</strong> L사이즈</p>
+
+    <p><strong>Strength :</strong> 1. 남의 얘기를 잘 들어준다</p>
+
+    <p><strong>Weakness :</strong> 1. 상황을 마주하지 않는다</p>
+
+  </div>
+
+</div>
+
+<div class="detail-box">
+
+  Write detailed things about him here...
+
+</div>
 
     </div>
 
@@ -592,7 +707,39 @@ body{
 
       <h3>Likes</h3>
 
-      <textarea placeholder="What does he like?"></textarea>
+      <div class="like-list">
+
+  <div class="like-item">
+
+    🍔 Favorite Food :불고기 햄버거
+
+  </div>
+
+  <div class="like-item">
+
+    🎮 Favorite Hobby :디시 실베보기, 기사보기
+
+  </div>
+
+  <div class="like-item">
+
+    💗 Favorite Behavior :
+
+  </div>
+
+  <div class="like-item">
+
+    🎵 Favorite Music :
+
+  </div>
+
+  <div class="like-item">
+
+    ☕ Favorite Drink :
+
+  </div>
+
+</div>
 
     </div>
 
@@ -604,7 +751,33 @@ body{
 
       <h3>Dislikes</h3>
 
-      <textarea placeholder="What does he dislike?"></textarea>
+    <div class="hate-list">
+
+  <div class="hate-item">
+
+    🤢 Disliked Food : 오이, 방울토마토
+
+  </div>
+
+  <div class="hate-item">
+
+    😒 Disliked Behavior : 말 안듣는거
+
+  </div>
+
+  <div class="hate-item">
+
+    💢 Things He Hates :
+
+  </div>
+
+  <div class="hate-item">
+
+    🚫 Disliked Situation :
+
+  </div>
+
+</div>
 
     </div>
 
