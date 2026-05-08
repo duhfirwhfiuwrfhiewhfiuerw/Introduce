@@ -26,11 +26,27 @@ body{
 
   font-family:Arial, sans-serif;
 
-  background:#fffafc;
-
   overflow-x:hidden;
 
-  color:#222;
+  color:#fff;
+
+  background:
+
+  linear-gradient(
+
+    rgba(0,0,0,0.65),
+
+    rgba(0,0,0,0.75)
+
+  ),
+
+  url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1974&auto=format&fit=crop');
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-attachment:fixed;
 
 }
 
@@ -68,11 +84,9 @@ body{
 
   display:flex;
 
-  width:max-content;
+  width:fit-content;
 
-  will-change:transform;
-
-  animation:slide 35s linear infinite;
+  animation:slide 40s linear infinite;
 
 }
 .reverse{
@@ -437,15 +451,15 @@ body{
 
 @keyframes slide{
 
-  from{
+  0%{
 
-    transform:translate3d(0,0,0);
+    transform:translateX(0);
 
   }
 
-  to{
+  100%{
 
-    transform:translate3d(-50%,0,0);
+    transform:translateX(-50%);
 
   }
 
@@ -453,20 +467,19 @@ body{
 
 @keyframes slideReverse{
 
-  from{
+  0%{
 
-    transform:translate3d(-50%,0,0);
+    transform:translateX(-50%);
 
   }
 
-  to{
+  100%{
 
-    transform:translate3d(0,0,0);
+    transform:translateX(0);
 
   }
 
 }
-
 </style>
 
 </head>
@@ -498,21 +511,6 @@ body{
       <div class="film"><img src="https://i.imgur.com/vfMM35O.jpeg"></div>
 
       <div class="film"><img src="https://i.imgur.com/RiS4YEp.jpeg"></div>
-<div class="film"><img src="https://i.imgur.com/5sfYlRO.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/7b6DqU9.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/YSKF78b.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/bKinq5f.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/B05y0fD.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/V5fsJnF.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/vfMM35O.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/RiS4YEp.jpeg"></div>
     </div>
 
   </div>
@@ -568,22 +566,7 @@ body{
       <div class="film"><img src="https://i.imgur.com/vfMM35O.jpeg"></div>
 
       <div class="film"><img src="https://i.imgur.com/RiS4YEp.jpeg"></div>
-<div class="film"><img src="https://i.imgur.com/5sfYlRO.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/7b6DqU9.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/YSKF78b.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/bKinq5f.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/B05y0fD.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/V5fsJnF.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/vfMM35O.jpeg"></div>
-
-<div class="film"><img src="https://i.imgur.com/RiS4YEp.jpeg"></div>
-    </div>
+ </div>
 
   </div>
 
@@ -808,7 +791,11 @@ function completeBucket(button){
   document.getElementById('completedList').appendChild(item);
 
 }
+document.querySelectorAll('.film-track').forEach(track => {
 
+  track.innerHTML += track.innerHTML;
+
+});
 </script>
 
 </body>
