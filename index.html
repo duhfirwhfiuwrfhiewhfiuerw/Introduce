@@ -4,409 +4,785 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>My Favorite Person</title>
+<title>Introduce My Favorite Person</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+*{
 
-  <style>
+  margin:0;
 
-    *{
+  padding:0;
 
-      margin:0;
+  box-sizing:border-box;
 
-      padding:0;
+}
 
-      box-sizing:border-box;
+body{
 
-    }
+  font-family:Arial, sans-serif;
 
-    body{
+  background:#fffafc;
 
-      background:#fffafc;
+  overflow-x:hidden;
 
-      overflow:hidden;
+  color:#222;
 
-      font-family:Arial, sans-serif;
+}
 
-      height:100vh;
+/* 메인 화면 */
 
-    }
+.hero{
 
-    .container{
+  width:100%;
 
-      width:100%;
+  height:100vh;
 
-      height:100vh;
+  display:flex;
 
-      display:flex;
+  flex-direction:column;
 
-      flex-direction:column;
+  justify-content:space-between;
 
-      justify-content:space-between;
+  position:relative;
 
-      align-items:center;
+}
 
-      position:relative;
+/* 필름 */
 
-    }
+.film-wrapper{
 
-    /* 가운데 메인 */
+  width:100%;
 
-    .center-text{
+  overflow:hidden;
 
-      position:absolute;
+  padding:8px 0;
 
-      top:50%;
+}
 
-      left:50%;
+.film-track{
 
-      transform:translate(-50%,-50%);
+  display:flex;
 
-      text-align:center;
+  width:max-content;
 
-      z-index:10;
+  animation:slide 28s linear infinite;
 
-    }
+}
 
-    .center-text h1{
+.reverse{
 
-      font-size:42px;
+  animation:slideReverse 28s linear infinite;
 
-      color:#222;
+}
 
-      margin-bottom:15px;
+.film{
 
-      letter-spacing:2px;
+  background:#111;
 
-    }
+  padding:8px;
 
-    .center-text p{
+  margin-right:14px;
 
-      color:#777;
+  border-radius:8px;
 
-      font-size:15px;
+  position:relative;
 
-      letter-spacing:3px;
+}
 
-    }
+.film::before,
 
-    /* 필름 공통 */
+.film::after{
 
-    .film-wrapper{
+  content:"";
 
-      width:100%;
+  position:absolute;
 
-      overflow:hidden;
+  left:0;
 
-      padding:20px 0;
+  width:100%;
 
-      background:#fffafc;
+  height:6px;
 
-    }
+  background:
 
-    .film-track{
+  repeating-linear-gradient(
 
-      display:flex;
+    to right,
 
-      width:max-content;
+    #fff 0px,
 
-      animation:slide 28s linear infinite;
+    #fff 8px,
 
-    }
+    transparent 8px,
 
-    .film-track.reverse{
+    transparent 16px
 
-      animation:slideReverse 28s linear infinite;
+  );
 
-    }
+}
 
-    /* 필름 카드 */
+.film::before{
 
-    .film{
+  top:3px;
 
-      background:#111;
+}
 
-      padding:12px;
+.film::after{
 
-      margin-right:20px;
+  bottom:3px;
 
-      border-radius:8px;
+}
 
-      position:relative;
+.film img{
 
-    }
+  width:120px;
 
-    /* 필름 구멍 */
+  height:160px;
 
-    .film::before,
+  object-fit:cover;
 
-    .film::after{
+  border-radius:4px;
 
-      content:"";
+  display:block;
 
-      position:absolute;
+  margin-top:8px;
 
-      left:0;
+  margin-bottom:8px;
 
-      width:100%;
+}
 
-      height:8px;
+/* 가운데 */
 
-      background:
+.center{
 
-      repeating-linear-gradient(
+  position:absolute;
 
-        to right,
+  top:50%;
 
-        #fff 0px,
+  left:50%;
 
-        #fff 10px,
+  transform:translate(-50%,-50%);
 
-        transparent 10px,
+  text-align:center;
 
-        transparent 20px
+  width:100%;
 
-      );
+  padding:0 20px;
 
-    }
+}
 
-    .film::before{
+.center h1{
 
-      top:4px;
+  font-size:32px;
 
-    }
+  margin-bottom:30px;
 
-    .film::after{
+  letter-spacing:1px;
 
-      bottom:4px;
+}
 
-    }
+.button-group{
 
-    .film img{
+  display:flex;
 
-      width:180px;
+  flex-direction:column;
 
-      height:240px;
+  gap:14px;
 
-      object-fit:cover;
+  align-items:center;
 
-      border-radius:4px;
+}
 
-      display:block;
+.main-btn{
 
-      margin-top:12px;
+  width:230px;
 
-      margin-bottom:12px;
+  padding:14px;
 
-    }
+  border:none;
 
-    /* 애니메이션 */
+  border-radius:999px;
 
-    @keyframes slide{
+  background:#ffd9e6;
 
-      from{
+  color:#222;
 
-        transform:translateX(0);
+  font-size:15px;
 
-      }
+  cursor:pointer;
 
-      to{
+  transition:.3s;
 
-        transform:translateX(-50%);
+}
 
-      }
+.main-btn:hover{
 
-    }
+  transform:scale(1.05);
 
-    @keyframes slideReverse{
+}
 
-      from{
+/* 페이지 */
 
-        transform:translateX(-50%);
+.page{
 
-      }
+  display:none;
 
-      to{
+  min-height:100vh;
 
-        transform:translateX(0);
+  padding:30px 20px 100px;
 
-      }
+}
 
-    }
+.active{
 
-    /* 모바일 */
+  display:block;
 
-    @media(max-width:768px){
+}
 
-      .center-text h1{
+/* 뒤로가기 */
 
-        font-size:28px;
+.back-btn{
 
-      }
+  border:none;
 
-      .center-text p{
+  background:#ffd9e6;
 
-        font-size:12px;
+  padding:10px 18px;
 
-      }
+  border-radius:999px;
 
-      .film img{
+  margin-bottom:25px;
 
-        width:130px;
+  cursor:pointer;
 
-        height:180px;
+}
 
-      }
+/* 탭 */
 
-    }
+.tabs{
 
-  </style>
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:20px;
+
+  overflow-x:auto;
+
+}
+
+.tab-btn{
+
+  padding:10px 16px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:#ffeaf1;
+
+  cursor:pointer;
+
+  white-space:nowrap;
+
+}
+
+.tab-btn.active-tab{
+
+  background:#ffb8cf;
+
+}
+
+/* 탭 내용 */
+
+.tab-content{
+
+  display:none;
+
+}
+
+.tab-content.show{
+
+  display:block;
+
+}
+
+/* 카드 */
+
+.info-card{
+
+  background:white;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  margin-bottom:14px;
+
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+
+}
+
+.info-card textarea{
+
+  width:100%;
+
+  height:120px;
+
+  border:none;
+
+  resize:none;
+
+  outline:none;
+
+  font-size:15px;
+
+  margin-top:10px;
+
+  background:#fffafc;
+
+  padding:12px;
+
+  border-radius:12px;
+
+}
+
+/* 버킷리스트 */
+
+.bucket-input{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:20px;
+
+}
+
+.bucket-input input{
+
+  flex:1;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  border:none;
+
+  background:white;
+
+}
+
+.bucket-input button{
+
+  border:none;
+
+  background:#ffb8cf;
+
+  padding:0 18px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+}
+
+.bucket-item{
+
+  background:white;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  margin-bottom:12px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+
+}
+
+.bucket-item button{
+
+  border:none;
+
+  background:#ffd9e6;
+
+  border-radius:50%;
+
+  width:34px;
+
+  height:34px;
+
+  cursor:pointer;
+
+}
+
+.section-title{
+
+  margin:25px 0 14px;
+
+  font-size:18px;
+
+}
+
+@keyframes slide{
+
+  from{
+
+    transform:translateX(0);
+
+  }
+
+  to{
+
+    transform:translateX(-50%);
+
+  }
+
+}
+
+@keyframes slideReverse{
+
+  from{
+
+    transform:translateX(-50%);
+
+  }
+
+  to{
+
+    transform:translateX(0);
+
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <div class="container">
+<!-- 메인 -->
 
-    <!-- 상단 필름 -->
+<section class="hero" id="home">
 
-    <div class="film-wrapper">
+  <!-- 상단 필름 -->
 
-      <div class="film-track">
+  <div class="film-wrapper">
 
-        <!-- 사진 반복 -->
+    <div class="film-track">
 
-        <div class="film">
+      <div class="film"><img src="photo1.jpg"></div>
 
-          <img src="photo1.jpg">
+      <div class="film"><img src="photo2.jpg"></div>
 
-        </div>
+      <div class="film"><img src="photo3.jpg"></div>
 
-        <div class="film">
+      <div class="film"><img src="photo4.jpg"></div>
 
-          <img src="photo2.jpg">
+      <div class="film"><img src="photo1.jpg"></div>
 
-        </div>
+      <div class="film"><img src="photo2.jpg"></div>
 
-        <div class="film">
+      <div class="film"><img src="photo3.jpg"></div>
 
-          <img src="photo3.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo4.jpg">
-
-        </div>
-
-        <!-- 무한반복용 복제 -->
-
-        <div class="film">
-
-          <img src="photo1.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo2.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo3.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo4.jpg">
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- 가운데 -->
-
-    <div class="center-text">
-
-      <h1>My Favorite Person</h1>
-
-      <p>all my favorite moments with you</p>
-
-    </div>
-
-    <!-- 하단 필름 -->
-
-    <div class="film-wrapper">
-
-      <div class="film-track reverse">
-
-        <div class="film">
-
-          <img src="photo5.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo6.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo7.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo8.jpg">
-
-        </div>
-
-        <!-- 반복 -->
-
-        <div class="film">
-
-          <img src="photo5.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo6.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo7.jpg">
-
-        </div>
-
-        <div class="film">
-
-          <img src="photo8.jpg">
-
-        </div>
-
-      </div>
+      <div class="film"><img src="photo4.jpg"></div>
 
     </div>
 
   </div>
+
+  <!-- 가운데 -->
+
+  <div class="center">
+
+    <h1>Introduce My Favorite Person</h1>
+
+    <div class="button-group">
+
+      <button class="main-btn" onclick="openPage('himPage')">
+
+        About Him
+
+      </button>
+
+      <button class="main-btn" onclick="openPage('mePage')">
+
+        About Me
+
+      </button>
+
+      <button class="main-btn" onclick="openPage('bucketPage')">
+
+        Bucket List
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- 하단 필름 -->
+
+  <div class="film-wrapper">
+
+    <div class="film-track reverse">
+
+      <div class="film"><img src="photo5.jpg"></div>
+
+      <div class="film"><img src="photo6.jpg"></div>
+
+      <div class="film"><img src="photo7.jpg"></div>
+
+      <div class="film"><img src="photo8.jpg"></div>
+
+      <div class="film"><img src="photo5.jpg"></div>
+
+      <div class="film"><img src="photo6.jpg"></div>
+
+      <div class="film"><img src="photo7.jpg"></div>
+
+      <div class="film"><img src="photo8.jpg"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- About Him -->
+
+<section class="page" id="himPage">
+
+  <button class="back-btn" onclick="goHome()">← Back</button>
+
+  <div class="tabs">
+
+    <button class="tab-btn active-tab" onclick="showTab(event,'himIntro')">Introduction</button>
+
+    <button class="tab-btn" onclick="showTab(event,'himLike')">Likes</button>
+
+    <button class="tab-btn" onclick="showTab(event,'himHate')">Dislikes</button>
+
+  </div>
+
+  <div class="tab-content show" id="himIntro">
+
+    <div class="info-card">
+
+      <h3>Introduction</h3>
+
+      <textarea placeholder="Write about him..."></textarea>
+
+    </div>
+
+  </div>
+
+  <div class="tab-content" id="himLike">
+
+    <div class="info-card">
+
+      <h3>Likes</h3>
+
+      <textarea placeholder="What does he like?"></textarea>
+
+    </div>
+
+  </div>
+
+  <div class="tab-content" id="himHate">
+
+    <div class="info-card">
+
+      <h3>Dislikes</h3>
+
+      <textarea placeholder="What does he dislike?"></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- About Me -->
+
+<section class="page" id="mePage">
+
+  <button class="back-btn" onclick="goHome()">← Back</button>
+
+  <div class="tabs">
+
+    <button class="tab-btn active-tab" onclick="showTab(event,'meIntro')">Introduction</button>
+
+    <button class="tab-btn" onclick="showTab(event,'meLike')">Likes</button>
+
+    <button class="tab-btn" onclick="showTab(event,'meHate')">Dislikes</button>
+
+  </div>
+
+  <div class="tab-content show" id="meIntro">
+
+    <div class="info-card">
+
+      <h3>Introduction</h3>
+
+      <textarea placeholder="Write about yourself..."></textarea>
+
+    </div>
+
+  </div>
+
+  <div class="tab-content" id="meLike">
+
+    <div class="info-card">
+
+      <h3>Likes</h3>
+
+      <textarea placeholder="What do you like?"></textarea>
+
+    </div>
+
+  </div>
+
+  <div class="tab-content" id="meHate">
+
+    <div class="info-card">
+
+      <h3>Dislikes</h3>
+
+      <textarea placeholder="What do you dislike?"></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Bucket -->
+
+<section class="page" id="bucketPage">
+
+  <button class="back-btn" onclick="goHome()">← Back</button>
+
+  <div class="bucket-input">
+
+    <input type="text" id="bucketText" placeholder="Write your bucket list...">
+
+    <button onclick="addBucket()">+</button>
+
+  </div>
+
+  <h2 class="section-title">Bucket List</h2>
+
+  <div id="bucketList"></div>
+
+  <h2 class="section-title">Completed</h2>
+
+  <div id="completedList"></div>
+
+</section>
+
+<script>
+
+function openPage(pageId){
+
+  document.getElementById('home').style.display='none';
+
+  document.querySelectorAll('.page').forEach(page=>{
+
+    page.classList.remove('active');
+
+  });
+
+  document.getElementById(pageId).classList.add('active');
+
+}
+
+function goHome(){
+
+  document.getElementById('home').style.display='flex';
+
+  document.querySelectorAll('.page').forEach(page=>{
+
+    page.classList.remove('active');
+
+  });
+
+}
+
+/* 탭 */
+
+function showTab(event, tabId){
+
+  let parent = event.target.closest('.page');
+
+  parent.querySelectorAll('.tab-content').forEach(tab=>{
+
+    tab.classList.remove('show');
+
+  });
+
+  parent.querySelectorAll('.tab-btn').forEach(btn=>{
+
+    btn.classList.remove('active-tab');
+
+  });
+
+  document.getElementById(tabId).classList.add('show');
+
+  event.target.classList.add('active-tab');
+
+}
+
+/* 버킷리스트 */
+
+function addBucket(){
+
+  const input = document.getElementById('bucketText');
+
+  if(input.value.trim()==='') return;
+
+  const item = document.createElement('div');
+
+  item.className='bucket-item';
+
+  item.innerHTML=`
+
+    <span>${input.value}</span>
+
+    <button onclick="completeBucket(this)">✔</button>
+
+  `;
+
+  document.getElementById('bucketList').appendChild(item);
+
+  input.value='';
+
+}
+
+function completeBucket(button){
+
+  const item = button.parentElement;
+
+  button.remove();
+
+  document.getElementById('completedList').appendChild(item);
+
+}
+
+</script>
 
 </body>
 
