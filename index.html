@@ -781,52 +781,172 @@ body{
 </section>
 
 <!-- About Me -->
-
 <section class="page" id="mePage">
 
   <button class="back-btn" onclick="goHome()">← Back</button>
 
   <div class="tabs">
 
-    <button class="tab-btn active-tab" onclick="showTab(event,'meIntro')">Introduction</button>
+    <button class="tab-btn active-tab" onclick="showTab(event,'meIntro')">
 
-    <button class="tab-btn" onclick="showTab(event,'meLike')">Likes</button>
+      Introduction
 
-    <button class="tab-btn" onclick="showTab(event,'meHate')">Dislikes</button>
+    </button>
+
+    <button class="tab-btn" onclick="showTab(event,'meLike')">
+
+      Likes
+
+    </button>
+
+    <button class="tab-btn" onclick="showTab(event,'meHate')">
+
+      Dislikes
+
+    </button>
 
   </div>
 
+  <!-- Introduction -->
+
   <div class="tab-content show" id="meIntro">
+
+    <div class="profile-card">
+
+      <!-- 사진 -->
+
+      <img 
+
+        src="https://i.imgur.com/여기에사진넣기.jpeg"
+
+        class="profile-img"
+
+      >
+
+      <!-- 정보 -->
+
+      <div class="profile-info">
+
+        <h2>유지수</h2>
+
+        <p><strong>Age :</strong> 21</p>
+
+        <p><strong>Location :</strong> 광주 서구 어딘가</p>
+
+        <p><strong>Height :</strong> 155cm</p>
+
+        <p><strong>Weight :</strong> 비밀</p>
+
+        <p><strong>Shoe Size :</strong> 230mm</p>
+
+        <p><strong>Clothes Size :</strong> S~M사이인듯</p>
+
+        <p><strong>Blood type :</strong> O형</p>
+
+        <p><strong>Birthday :</strong> 7월19일</p>
+
+      </div>
+
+    </div>
+
+    <!-- 세부 설명 -->
 
     <div class="info-card">
 
-      <h3>Introduction</h3>
+      <h3>Details</h3>
 
-      <textarea placeholder="Write about yourself..."></textarea>
+      <p class="detail-text">
+
+
+      </p>
 
     </div>
 
   </div>
+
+  <!-- Likes -->
 
   <div class="tab-content" id="meLike">
 
     <div class="info-card">
 
-      <h3>Likes</h3>
+      <h3>Favorite Foods</h3>
 
-      <textarea placeholder="What do you like?"></textarea>
+      <ul class="like-list">
+
+        <li>마라탕</li>
+
+        <li>회</li>
+
+        <li>디저트</li>
+
+      </ul>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>Favorite Things</h3>
+
+      <ul class="like-list">
+
+        <li>핑크색</li>
+
+        <li>명품 구경</li>
+
+        <li>사진 찍기</li>
+
+      </ul>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>Favorite Brands</h3>
+
+      <ul class="like-list">
+
+        <li>Prada</li>
+
+        <li>Dior</li>
+
+        <li>Chanel</li>
+
+      </ul>
 
     </div>
 
   </div>
 
+  <!-- Dislikes -->
+
   <div class="tab-content" id="meHate">
 
     <div class="info-card">
 
-      <h3>Dislikes</h3>
+      <h3>Disliked Foods</h3>
 
-      <textarea placeholder="What do you dislike?"></textarea>
+      <ul class="hate-list">
+
+        <li>민트초코</li>
+
+        <li>느끼한 음식</li>
+
+      </ul>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>Disliked Things</h3>
+
+      <ul class="hate-list">
+
+        <li>무례한 사람</li>
+
+        <li>답장 느린 거</li>
+
+      </ul>
 
     </div>
 
